@@ -7,6 +7,7 @@ Create tasks
 <h1>Create new task</h1>
 
 <form method="post">
+    {% csrf_token %}
     <input type="text" placeholder="Введите название" class="form-control"><br>
     <textarea type="text" placeholder="Введите описание" rows="10" class="form-control"></textarea><br>
     <input type="date" placeholder="Срок выполнения" class="form-control"><br>
