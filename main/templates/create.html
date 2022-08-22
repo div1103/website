@@ -1,15 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}
-{{ title }}
+Create tasks
 {% endblock %}
 
 {% block content %}
-<h1>Main page</h1>
-<details>
-<summary>
-    Create new task
-</summary>
-
+<h1>Create new task</h1>
 
 <form method="post">
     <input type="text" placeholder="Введите название" class="form-control"><br>
@@ -18,18 +13,4 @@
     <input type="text" placeholder="Локация выполнения" class="form-control"><br>
     <button type="submit" class="btn btn-success">Добавить</button>
 </form>
-</details>
-
-    {% if tasks %}
-    {% for el in tasks %}
-    <div class="alert alert-warning mt-2">
-        <h3>{{ el.title }}</h3>
-        <p>{{el.task}}</p>
-        <p>{{el.deadline}}</p>
-    </div>
-    {% endfor %}
-    {% else %}
-        <p>Текущих задач не найдено</p>
-    {% endif %}
 {% endblock %}
-
