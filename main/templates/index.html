@@ -10,13 +10,12 @@
     Create new task
 </summary>
 
-
 <form method="post">
     {% csrf_token %}
-    <input type="text" placeholder="Введите название" class="form-control"><br>
-    <textarea type="text" placeholder="Введите описание" rows="10" class="form-control"></textarea><br>
-    <input type="date" placeholder="Срок выполнения" class="form-control"><br>
-    <input type="text" placeholder="Локация выполнения" class="form-control"><br>
+    {{ form.title }}<br>
+    {{ form.task }}<br>
+    {{ form.deadline }}<br>
+    {{ form.location }}<br>
     <button type="submit" class="btn btn-success">Добавить</button>
 </form>
 </details>

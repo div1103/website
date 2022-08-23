@@ -5,7 +5,8 @@ from .forms import TaskForm
 
 def index(request):
     tasks = Task.objects.order_by('-id')
-    return render(request, 'index.html', {'title': 'Главная страница', 'tasks': tasks})
+    form = TaskForm()
+    return render(request, 'index.html', {'title': 'Главная страница', 'tasks': tasks, 'form': form})
 
 def contact(request):
     return render(request, 'contacts.html')
@@ -18,7 +19,7 @@ def create(request):
     context = {
         'form':form
     }
-    return render(request, 'create.html')
+    return render(request, 'create.html', context)
 
 
 # Create your views here.
